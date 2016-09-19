@@ -1,0 +1,56 @@
+public class RetryPendingTask
+{
+       tcProvisioningOperationsIntf pSecvice;
+       private static Map<String, String> env = null;
+       public static OIMClient oIMClient = null;
+       static SearchCriteria criteria = new SearchCriteria("First Name", "*",Operator.EQUAL);
+       static Set attrNames = new HashSet();
+       private static OIMClient getOIMClient() throws Exception
+       {
+              attrNames.add("First Name");
+              attrNames.add("Last Name");
+              attrNames.add("User Login");
+              env = new Hashtable<String, String>();
+        env.put(OIMClient.JAVA_NAMING_FACTORY_INITIAL,
+                "weblogic.jndi.WLInitialContextFactory");
+        env.put(OIMClient.JAVA_NAMING_PROVIDER_URL, "t3://16.181.233.163:14000");
+        env.put(OIMClient.WLS_CONTEXT_FACTORY, "WEBLOGIC");
+        System.setProperty("java.security.auth.login.config",
+                           "C:\\conf\\authwl.conf");
+        System.setProperty("APPSERVER_TYPE", "wls");
+        oIMClient = new OIMClient((Hashtable)env);
+        return oIMClient;
+       }
+       
+       
+       
+       
+       public static void main(String[] a) 
+       {
+              try {
+                     OIMClient client = getOIMClient();
+                     if(client !=null)
+                     {
+                           System.out.println("not null");
+                           client.login("xelsysadm", "Welcome1".toCharArray());
+                           UserManager u=client.getService(UserManager.class);
+                           List<User> userList=new ArrayList<User>();
+                           userList=u.search(criteria, attrNames, null);
+                           System.out.println(userList.size());
+                           for(int i=0;i<userList.size();i++)
+                           {
+                                  System.out.println(userList.get(1));
+                           }
+                     }
+                     else{
+                           System.out.println("null");
+                     }
+              } catch (Exception e) {
+                     // TODO Auto-generated catch block
+                     e.printStackTrace();
+              }
+
+       }
+
+}
+

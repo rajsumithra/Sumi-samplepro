@@ -1,0 +1,7 @@
+
+OIM-API
+
+http://oim11gapi.blogspot.in/2012/12/usermanager-search-user-code.html
+http://idmoim.blogspot.in/2011/08/searching-user-in-oim-api.htmlSS
+http://www.iamidm.com/2015/09/oim-11g-r2-getting-all-attributes-using.html
+https://docs.oracle.com/cd/E28280_01/apirefs.1111/e17334/oracle/iam/identity/usermgmt/api/UserManager.html#search_oracle_iam_platform_entitymgr_vo_SearchCriteria__java_util_Set__java_util_HashMap_

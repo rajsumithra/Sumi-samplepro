@@ -1,0 +1,54 @@
+16.175.217.110 | http://16.175.217.110:14000/
+Weloadm
+hp2015
+
+
+http://16.175.217.111:7777/oim
+
+http://16.175.217.111:7777/sysadmin
+xelsysadm
+Password123
+
+Identity System Administration
+http://sso.dev.hp.com:8777/sysadmin
+.................................
+Identity Self Service
+http://sso.dev.hp.com:8777/identity/faces/home?_afrLoop=5153624767703826&_afrWindowMode=0&_afrWindowId=null&_adf.ctrl-state=s6l0zfui9_1
+
+
+Existing Recon Job : GTC_GOMA_FULL_GTC
+
+/opt/SP/weloadm/Recon/GOMA/ReconciliationData/input_full	
+
+-Djava.security.auth.login.config=C:/GOMA/JARS/authwl.conf
+
+https://docs.oracle.com/cd/E27559_01/dev.1112/e27150/apis.htm#OMDEV734 | http://oraclestack.blogspot.in/2015/03/oim-api-entitlement.html
+
+/////////////////////////////////////////////////////////////
+1.	Create csv file with 10 records and run the reconciliation job
+2.	Modify the existing csv file to add new column ‘Flag’ and give appropriate value
+3.	Run the java program with the csv file created in step 2 to process the records with ‘Flag’value is ‘Update’
+4.	If record exist in OIM, place that record in csv file which also contains records with flag ‘Delete’ or ‘Add’
+5.	If record does not exist in OIM, place that record in separate csv file 
+
+..........................................................................
+
+https://docs.oracle.com/cd/E28280_01/apirefs.1111/e17334/oracle/iam/identity/usermgmt/api/UserManager.html#search_oracle_iam_platform_entitymgr_vo_SearchCriteria__java_util_Set__java_util_HashMap_
+
+
+how to retrieve particular column value from csv file in java
+https://www.codecademy.com 
+https://www.codecademy.com/en/courses/learn-java/lessons/introduction-to-java/exercises/whats-your-name?action=resume
+
+
+................................................................
+for(int k=0;k<=10;k++)
+				{
+					if(nextLine[k].equals("UserID"))
+					{
+						String j = nextLine[k];
+						System.out.println("The value is : " + k);
+					}
+				}
+.................................................................... 
+

@@ -1,0 +1,11 @@
+BufferedReader br1 = null;
+		BufferedWriter updatebw = getBufferedWriter("C:\\BYOX\\Update.csv");
+		try {
+
+			String sCurrentLine = null;
+			br1 = new BufferedReader(new FileReader("C:\\BYOX\\BYOXDATA.csv"));
+			while ((sCurrentLine = br1.readLine()) != null) {
+				if(sCurrentLine.contains("login")){
+					updatebw.append(sCurrentLine);
+					updatebw.append("\n");
+				}
